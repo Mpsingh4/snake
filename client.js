@@ -10,6 +10,8 @@ const connect = function () {
 
   conn.on('connect', () => {
     console.log('Connection to the server established.')
+    conn.write('Name: MPS');
+    conn.write('Move: up');
   })
 
   conn.on('data', (data) => {
