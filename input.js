@@ -28,6 +28,8 @@ const handleUserInput = function (data) {
   if (data === '\u0003') {
     console.log('Exit command called');
     process.exit();
+  } else if (data === `${name}\n`) { // checks if the user has input their name
+    connection.write(`New Player ${name} has joined the game.`); //was unable to test this properly.
   }
 };
 
