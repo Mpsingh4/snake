@@ -1,10 +1,14 @@
 const net = require("net");
 
 const { connect } = require("./client");
-const { setupInput } = require("./input");
+const { setupInput, keyInput } = require("./input");
 
 console.log("Connecting ...");
 
-connect();
+const connection = connect();
+const stdin = setupInput(connection);
+keyInput(stdin, connection);
 
-setupInput();
+//this code sets up the client to connect to the server, 
+//establishes a connection object, and sets up the input stream 
+//for the player to send movement or messages to the server.
